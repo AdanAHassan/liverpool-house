@@ -114,12 +114,6 @@ let headerTextArray = menuContent.map((item, index) => {
 
 export default function Home() {
 
-  const [hoverOne, setHoverOne] = useState(false)
-  const [hoverTwo, setHoverTwo] = useState(false)
-  const [hoverThree, setHoverThree] = useState(false)
-  const [hoverFour, setHoverFour] = useState(false)
-  
-
   const [hoverIndex, setHoverIndex] = useState(0)
 
   return (
@@ -127,10 +121,6 @@ export default function Home() {
       <div className="w-full h-1/2" >
         <Header 
           headerTextArray={headerTextArray} 
-          hoverOne={hoverOne}
-          hoverTwo={hoverTwo}
-          hoverThree={hoverThree}
-          hoverFour={hoverFour}
           hoverIndex={hoverIndex}
         />
       </div>
@@ -140,12 +130,6 @@ export default function Home() {
           <MenuItemDiv
             key={`${item.header}-${index}`}
             menuItemData={item}
-            setHoverState={
-                index === 0 ? setHoverOne
-                : index === 1 ? setHoverTwo
-                : index === 2 ? setHoverThree
-                : setHoverFour
-              }
             index={index}
             setHoverIndex={setHoverIndex}
           />
