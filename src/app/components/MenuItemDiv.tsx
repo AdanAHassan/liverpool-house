@@ -9,7 +9,7 @@ export default function MenuItemDiv({menuItemData, setHoverIndex, index}: {menuI
   return (
     <div onMouseOver={() =>  setHoverIndex(index + 1)} onMouseOut={() => setHoverIndex(0)} className="group bg-white text-black h-full border border-black border-2 overflow-hidden relative">
       <div className="absolute top-0 h-[7.5vh] items-center px-4 flex flex-row w-full justify-between z-50">
-        <div className="group-hover:invisible visible transition duration-500 ease-in-out font-bold text-xl">0{index+1}</div>
+        <div className="group-hover:invisible visible transition duration-1500 ease-in-out font-bold text-2xl">0{index+1}</div>
         <div className="group-hover:rotate-45 duration-500 ease-in-out rounded-full text-3xl"><AiOutlinePlusCircle /></div>
       </div>
       <div className="w-full group-hover:h-[35vh] h-[37.5vh] translate-y-[-30vh] group-hover:translate-y-0 duration-500 ease-in-out group-hover:pt-4 pt-0 px-6 pb-2 border-b-2 border-black">

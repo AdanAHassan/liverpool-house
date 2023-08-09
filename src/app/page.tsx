@@ -3,6 +3,7 @@
 import MenuItemDiv from './components/MenuItemDiv'
 import { Header } from './components/Header'
 import { useState } from "react"
+import { ProgressBarProvider } from "@/app/providers/ProgressBarProvider.js"
 
 export interface TagContent {
   vegetarian?: {
@@ -117,25 +118,27 @@ export default function Home() {
   const [hoverIndex, setHoverIndex] = useState(0)
 
   return (
-    <main className="relative flex h-screen w-screen bg-white flex-col items-center">
-      <div className="w-full h-1/2" >
-        <Header 
-          headerTextArray={headerTextArray} 
-          hoverIndex={hoverIndex}
-        />
-      </div>
-      <div className="w-full grid grid-cols-4 h-1/2 bg-green-900">
-      {
-        menuContent.map((item: MenuContent, index) => (
-          <MenuItemDiv
-            key={`${item.header}-${index}`}
-            menuItemData={item}
-            index={index}
-            setHoverIndex={setHoverIndex}
+    <ProgressBarProvider>
+      <main className="relative flex h-screen w-screen bg-white flex-col items-center">
+        <div className="w-full h-1/2" >
+          <Header 
+            headerTextArray={headerTextArray} 
+            hoverIndex={hoverIndex}
           />
-        ))
-      }
-      </div>
-    </main>
+        </div>
+        <div className="w-full grid grid-cols-4 h-1/2 bg-green-900">
+        {
+          menuContent.map((item: MenuContent, index) => (
+            <MenuItemDiv
+              key={`${item.header}-${index}`}
+              menuItemData={item}
+              index={index}
+              setHoverIndex={setHoverIndex}
+            />
+          ))
+        }
+        </div>
+      </main>
+    </ProgressBarProvider>
   )
 }

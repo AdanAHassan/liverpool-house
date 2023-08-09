@@ -1,6 +1,7 @@
 import React from "react"
 import { TitleContent } from "./TitleContent"
 import { Navbar } from "./Navbar"
+import { ProgressBar } from "@/app/components/ProgressBar"
 
 interface HeaderProps {
   headerTextArray: {
@@ -36,6 +37,7 @@ props.hoverIndex === 4 ? "translate-x-[-80%]" : "translate-x-0"
         ))
       }
       </div>
+      <div className="absolute bottom-0 z-30"><ProgressBar /></div>
     </div>
   )
 }
